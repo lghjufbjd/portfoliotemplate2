@@ -1,0 +1,632 @@
+<html lang="pl">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            width: 90vw;
+            position: relative;
+            margin: auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        #bg {
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            display: none;
+        }
+
+        .navbar {
+            height: 90px;
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            position: absolute;
+            margin: auto;
+        }
+
+        #label {
+            width: 60%;
+
+        }
+
+        #label img {
+            height: 50px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .menu a {
+            font-size: 12px;
+            font-weight: 900;
+            line-height: 24px;
+            text-transform: uppercase;
+        }
+
+        .menu a:hover {
+            color: #10c9c3;
+        }
+
+
+
+        .intro {
+            height: 100vh;
+            display: flex;
+            opacity: 0.5;
+            background-color: #e9e9e9;
+
+
+        }
+
+
+        .intro .text-box {
+            width: 50%;
+            float: right;
+        }
+
+        .intro .text-box h1 {
+            font-size: 38px;
+            font-weight: 900;
+        }
+
+        .intro .text-box p {
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 18px;
+            font-weight: 400;
+            margin: 25px 0;
+        }
+
+        #contacta {
+            position: absolute;
+            padding: 14px 40px;
+            background-color: #10c9c3;
+            opacity: 0.8;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+        }
+
+        #contacta {
+            color: #fff;
+        }
+
+        .about {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .about .text-box {
+            text-align: center;
+            width: 70vw;
+            margin: auto;
+        }
+
+        .about .text-box h1 {
+            color: #191919;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .about .text-box p {
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 16px;
+            font-weight: 400;
+            margin: 35px 0;
+        }
+
+        .skill {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-graph {
+            height: inherit;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            float: left;
+            background-color: #f8f9f9;
+        }
+
+
+
+        .skill-img {
+            height: inherit;
+            width: 50%;
+            float: right;
+            background-color: #e9e9e9;
+            opacity: 0.1;
+            background-image: url(https://lh3.googleusercontent.com/ty7zWV8JEYPo5of7Ps4X9upna-jCpm2UQKyGjDLC2M3vo-P0HH1yoBOMmqa3RQfe08bO9OVLT-_yXhf5uQ=s1600);
+        }
+
+        .skill-graph .text-box {
+            width: 100%;
+            position: relative;
+            left: calc(100vw - 96vw);
+        }
+
+        .skill-graph .text-box h1 {
+            font-size: 23px;
+            color: #171717;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .skill-box h2 {
+            margin: 20px 0;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .percent {
+            margin-left: 15px;
+        }
+
+        .skillbar {
+            width: 90%;
+            height: 3px;
+            background-color: #d8d8d8;
+        }
+
+        .skill-bar01 {
+            width: 75%;
+        }
+
+        .skill-bar02 {
+            width: 90%;
+        }
+
+        .skill-bar03 {
+            width: 65%;
+        }
+
+        .progress {
+            background-color: #10c9c3;
+            height: 3px;
+            opacity: 0.5;
+        }
+
+        .result {
+            height: 33vh;
+            display: flex;
+            background-color: #10c9c3;
+        }
+
+        .icon-grid {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .icon-grid-el {
+            display: flex;
+        }
+
+        .icon-grid-el img {
+            max-width: 100%;
+            height: 36px;
+            margin-right: 15px;
+        }
+
+        .icon-grid-el .text-box {
+            color: #fff;
+        }
+
+        .icon-grid-el .text-box h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .icon-grid-el .text-box h3 {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            height: 70vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .gallery-grid-el {
+            border: 1px #ddd solid;
+            background-image: url(http://webdesire.codes/images/work/w-1.jpg);
+            background-position: center;
+        }
+
+        .gallery-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 13vh;
+            background-color: #f5f5f5;
+        }
+
+        .gallery-footer h1 {
+            color: #8e8e8e;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .work {
+            height: calc(100vh - 230px);
+            padding-top: 100px;
+            padding-bottom: 130px;
+        }
+
+        .work .text-box {
+            width: 60%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .work .text-box h1 {
+            color: #191919;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .work .text-box p {
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 16px;
+            font-weight: 400;
+            padding-bottom: 60px;
+        }
+
+        .work .video {
+            background: #000;
+            height: 45vh;
+            width: 65%;
+            margin: auto;
+        }
+
+        .icong {
+            background-color: #f5f5f5;
+        }
+
+        .icong-grid {
+            height: auto;
+            padding: 10vh 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .icong-grid-el {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .icong-grid-el h2 {
+            color: #191919;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .icong-grid-el p {
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .icon-grid-el img {
+            max-width: 100%;
+            height: 38px;
+            margin-bottom: 20px;
+        }
+
+        .slider {
+            height: 65vh;
+            background-color: #10c9c3;
+        }
+
+        .awards {}
+
+        .aw-div {
+            height: 27vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .feedback {
+            height: auto;
+            padding: 100px 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+
+        .blank {
+            width: 65%;
+            margin: auto;
+            padding-bottom: 35px;
+        }
+
+        .blank .text-box h1 {
+            margin-bottom: 35px;
+            color: #1d1d1d;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .blank .text-box p {
+            margin-bottom: 20px;
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .input-system {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-areas:
+                "name mail"
+                "titl titl"
+                "comme comme"
+        }
+
+        .input-system-el {
+            box-sizing: border-box;
+            height: 48px;
+            padding: 10px;
+            border: none;
+            resize: none;
+
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        #name {
+            grid-area: name;
+        }
+
+        #mail {
+            grid-area: mail;
+        }
+
+        #titl {
+            grid-area: titl;
+        }
+
+        #comme {
+            grid-area: comme;
+            height: 170px;
+
+            box-sizing: border-box;
+            padding: 10px;
+            border: none;
+            resize: none;
+
+            color: #787878;
+            font-family: "Nunito Sans";
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        #fb-btn {
+            background-color: #10c9c3;
+            color: #fff;
+            padding: 14px 40px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .footer {
+            height: 30vh;
+            align-items: center;
+            padding: 40px;
+            background-color: #141414;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer p {
+            color: #bcbcbc;
+            font-family: "Nunito Sans";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .footer a {
+            color: #bcbcbc;
+            font-family: "Nunito Sans";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        .footer-main {
+            width: 30%;
+        }
+
+        .footer-main h2 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+        }
+
+    </style>
+</head>
+
+<div class="navbar">
+    <div class="container">
+        <ul class="menu">
+            <li id="label"><a href="#"><img src="images/greylogo.png" alt=""></a></li>
+            <li><a href="#">Strona główna</a></li>
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Usługi</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="intro">
+    <div class="container">
+        <div class="text-box">
+            <h1>FRONT-END WEB DEVELOPMENT▐</h1>
+            <p>Pomagamy start-upom, małym firmom i agencjom w tworzeniu wygodnych dla użytkownika witryn wysokiej jakości</p>
+            <a id="contacta" href="#">Skontaktuj się z nami</a>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="text-box">
+        <h1>O nas</h1>
+        <p>Każdy projekt to dla nas nowe wyzwanie, które realizujemy z pełnym zaangażowaniem. Rozwiązania, które tworzymy pomagają osiągnąć sukces naszym Klientom. Cały zespól posiada wieloletnie doświadczenie w branży i wie co robić, aby osiągać zadowalające efekty dla naszych Klientów. <b>Możesz nam zaufać.</b></p>
+
+    </div>
+</section>
+
+<section class="skill">
+    <div class="skill-graph">
+        <div class="text-box">
+            <h1>Umiejętności</h1>
+            <div class="skill-box">
+                <h2>UI/UX design <span class="percent">75%</span></h2>
+                <div class="skillbar">
+                    <div class="progress skill-bar01"></div>
+                </div>
+                <h2>Web development <span class="percent">90%</span></h2>
+                <div class="skillbar">
+                    <div class="progress skill-bar02"></div>
+                </div>
+                <h2>Marketing <span class="percent">65%</span></h2>
+                <div class="skillbar">
+                    <div class="progress skill-bar03"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skill-img"><img src="" alt=""></div>
+</section>
+
+<section class="result">
+    <div class="container">
+        <div class="icon-grid">
+            <div class="icon-grid-el">
+                <img src="https://www.dropbox.com/s/0cz7q77tw25pumf/like.png?dl=1" alt="">
+                <div class="text-box">
+                    <h2>548</h2>
+                    <h3>Ukończonych projektów</h3>
+                </div>
+            </div>
+            <div class="icon-grid-el">
+                <img src="https://www.dropbox.com/s/0cz7q77tw25pumf/like.png?dl=1" alt="">
+                <div class="text-box">
+                    <h2>1465</h2>
+                    <h3>Wypracowanych godzin</h3>
+                </div>
+            </div>
+            <div class="icon-grid-el">
+                <img src="https://www.dropbox.com/s/0cz7q77tw25pumf/like.png?dl=1" alt="">
+                <div class="text-box">
+                    <h2>612</h2>
+                    <h3>Pozytywnych opinii</h3>
+                </div>
+            </div>
+            <div class="icon-grid-el">
+                <img src="https://www.dropbox.com/s/0cz7q77tw25pumf/like.png?dl=1" alt="">
+                <div class="text-box">
+                    <h2>735</h2>
+                    <h3>szczęśliwych klientów</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="gallery-grid">
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+        <div class="gallery-grid-el"><img src="" alt=""></div>
+    </div>
+    <div class="gallery-footer">
+        <h1>Załaduj więcej prac</h1>
+    </div>
+</section>
+
+
+
+
+
+<section class="feedback">
+    <div class="container center">
+        <div class="blank">
+            <div class="text-box">
+                <h1>Kontakt</h1>
+                <p>Skontaktuj się z nami i zacznijmy pracę nad Twoim sukcesem Nie tak trudno nas znaleźć – napisz, zadzwoń, przyjedź – albo to my przyjedziemy do Ciebie. Jak Ci wygodnie? konferencja skype? dopasujemy się do Ciebie. Godziny pracy: 08:00 – 20:00.</p>
+            </div>
+            <div class="input-system">
+                <input type="text" id="name" class="input-system-el" placeholder="Twoje imie">
+                <input type="text" id="mail" class="input-system-el" placeholder="Twój email">
+                <input type="text" id="titl" class="input-system-el" placeholder="Tytul">
+                <textarea name="" id="comme" placeholder="Wiadomość" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <a id="fb-btn" href="#">Wyślij</a>
+    </div>
+</section>
+
+<section class="footer">
+    <div class="footer-main">
+        <h2>WebDesire</h2>
+        <p>Copyright © 2019 - WEB Desire</p>
+    </div>
+    <div class="footer-info">
+        <p>webdesire@gmail.com <br>
+            +44 987 065 908</p>
+    </div>
+
+</section>
+
+</html>
